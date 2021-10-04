@@ -1,0 +1,294 @@
+html,
+body {
+  height: 100vh;
+  margin: 0 auto;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+#wrapper{
+  height: 100%;
+  background: url(../Bilder/negative-space-black-forest-dawn.jpg)
+  no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+}
+.nav{
+  display: none;
+}
+.header {
+  position: sticky;
+  width: 100%;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+.header li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.header .menu {
+  max-height: 0;
+  transition: max-height .2s ease-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.header .menu-icon {
+  cursor: pointer;
+  padding: 28px 20px;
+  display: inline-block;
+}
+.header .menu-icon .navicon {
+  background: white;
+  display: flex;
+  height: 3px;
+  position: relative;
+  border-radius: 150px;
+  transition: .2s ease-out;
+  width: 20px;
+}
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  border-radius: 150px;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+.header .menu-icon .navicon:before {
+  top: 7px;
+}
+.header .menu-icon .navicon:after {
+  top: -7px;
+}
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu {
+  max-height: 20%;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+.start {
+  display: flex;
+  flex-grow: 1;
+  height: 100vh;
+  justify-content: center;
+  color: white;
+  .rubrik {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 200px;
+    .text1, .text2{
+      font-size: 1.2rem;
+      margin: 20px;
+    }
+  }
+}
+ .pil1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 220px;
+      margin-bottom: 70px;
+      color: white;
+      font-size: 1.2rem;
+      .fa-arrow-alt-circle-down{
+        color: white;
+        text-decoration: none;
+      }
+    }
+.personer {
+  background-color: white;
+  color: black;
+  flex: 1 0 auto;
+  .h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0px 5px 15px 10px rgba(128, 128, 128, 0.5);
+  margin-left: 130px;
+  margin-right: 130px;
+}
+.img1,
+.img2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .bild1,
+  .bild2,
+  .bild3,
+  .bild4 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.2rem;
+    margin: 5px;
+    width: 60%;
+  }
+}
+    .ruta1,
+    .ruta2,
+    .ruta3,
+    .ruta4 {
+      display: flex;
+      flex-direction: row;
+      padding: 30px;
+      background-color: rgba(128, 128, 128, 0.308);
+      border-radius: 4px;
+      font-size: 12px;
+      .fa-quote-right {
+        font-size: 30px;
+        margin-right: 5px;
+      }
+    }
+    .pil2{
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: black;
+      font-size: 1.2rem;
+      .fa-arrow-alt-circle-down{
+        color: black;
+        text-decoration: none;
+      }
+    }
+.foot {
+  font-size: 1.2rem;
+  display: flex;
+  height: 20%;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1.5rem;
+  padding-left: 4rem;
+  background-color: black;
+  color: white;
+  .fa-instagram,
+  .fa-twitter,
+  .fa-facebook {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    margin-right: 5px;
+  }
+}
+@media screen and (min-width: 768px) {
+  #wrapper {
+    flex-direction: row;
+  }
+  .header{
+    display: none;
+  }
+  header {
+    align-items: right;
+    height: 60px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.13);
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      text-align:right;
+      margin-right: 30px;
+      gap: 30px;
+      a {
+        color: white;
+        font-size: 19px;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .menu-wrap{
+    display: none;
+  }
+  .start {
+  display: flex;
+  flex-grow: 1;
+  height: 100vh;
+  align-items: center;
+  text-align: center;
+  color: white;
+   
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    span{
+      font-size: 1.2rem;
+      margin: 20px;
+    }
+  }
+}
+  .img1,
+.img2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+    .ruta1,
+    .ruta2,
+    .ruta4 {
+  width: 45%;
+}
+}
+.foot{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+}
